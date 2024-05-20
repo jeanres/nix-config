@@ -3,5 +3,4 @@
 	programs.fzf = {
 		enable = true;
 	};
-
 }

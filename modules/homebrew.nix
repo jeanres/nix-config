@@ -1,4 +1,5 @@
-{ pkgs, ...}: {
+{ pkgs, ...}:
+{
   homebrew = {
     enable = true;
 
@@ -9,12 +10,15 @@
 
     taps = [
       "homebrew/cask-fonts"
+      "vladdoster/formulae"
     ];
 
     brews = [
     ];
 
     casks = [
+      "docker"
+      "vimari"
     ];
   };
 }

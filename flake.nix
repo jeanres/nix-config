@@ -16,21 +16,22 @@
   outputs = { self, nixpkgs, darwin, home-manager }: {
     darwinConfigurations = {
       "Jeanres-MacBook-Pro" = darwin.lib.darwinSystem {
-        system = "aarch64-darwin"; # use "x86_64-darwin" on pre-M1 Mac
-        modules = [
-          ./systems/darwin.nix
-	  ./modules/homebrew.nix
-	  {	
-		  users.users."jeanre.swanepoel".home = "/Users/jeanre.swanepoel";
-}
-	  home-manager.darwinModules.home-manager
-	  {
-		  home-manager.useGlobalPkgs = true;
-		  home-manager.useUserPackages = true;
-		  home-manager.users."jeanre.swanepoel" = import ./home;
-}
-	];
-	  };
+	system = "aarch64-darwin"; # use "x86_64-darwin" on pre-M1 Mac
+	  modules = [
+	    ./systems/darwin.nix
+	    ./modules/services/shkd.nix
+	    ./modules/homebrew.nix
+	    {	
+	      users.users."jeanre.swanepoel".home = "/Users/jeanre.swanepoel";
+	    }
+	    home-manager.darwinModules.home-manager
+	    {
+	      home-manager.useGlobalPkgs = true;
+	      home-manager.useUserPackages = true;
+	      home-manager.users."jeanre.swanepoel" = import ./home;
+	    }
+	  ];
+      };
     };
   };
 }

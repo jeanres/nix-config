@@ -6,7 +6,8 @@
     ./zsh.nix
     ./git.nix
     ./neovim.nix
-    ./wezterm.nix	
+    ./wezterm.nix
+    ./tmux.nix
   ];
 
   home = {
