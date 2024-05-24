@@ -62,6 +62,7 @@ New applications can be added to ```modules/homebrew.nix```
 
 ### Neovim Plugins
 
+- arrow
 - cmp
 - comment
 - conform
