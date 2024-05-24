@@ -1,5 +1,7 @@
 # Nix Configuration
 
+Configuration for MacOS using nix, nix-darwin, home-manager and homebrew
+
 ## Install Homebrew
 
 ```
@@ -50,9 +52,48 @@ darwin-rebuild switch --flake .
 - Obs and Obs-ndi
 - TablePlus
 
+New applications can be added to ```modules/homebrew.nix```
+
 ## Services
 
 - SKHD (This allows to focus applications by using key combos)
+
+## Neovim Configuration
+
+### Neovim Plugins
+
+- cmp
+- comment
+- conform
+- copilot
+- fugitive
+- gitsigns
+- lsp
+- lualine
+- oil
+- telescope
+- treesitter
+- vim-sleuth
+- vim-tmux-navigator
+- vim-wiki
+
+Adding plugins can be done by creating a new lua file in ```home/neovim/lua/plugins```
+
+#### Plugin Example
+
+```
+return { 
+	"nyoom-engineering/oxocarbon.nvim",
+	config = function()
+		vim.opt.background = "dark" -- set this to dark or light
+		vim.cmd("colorscheme oxocarbon")
+	end,
+}
+```
+
+#### Settings
+
+Settings for neovim can be changed in ```home/neovim/lua/config/set.lua```
 
 ## Todo
 
