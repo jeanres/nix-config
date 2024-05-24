@@ -53,3 +53,7 @@ darwin-rebuild switch --flake .
 ## Services
 
 - SKHD (This allows to focus applications by using key combos)
+
+## Todo
+
+- Manange ssh keys with secrets
