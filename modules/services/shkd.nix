@@ -11,6 +11,7 @@
       ctrl - 4 : open /System/Applications/Mail.app
       ctrl - 5 : open /System/Applications/Calendar.app
       ctrl - 6 : open /System/Applications/Messages.app
+      ctrl - 7 : open /System/Applications/Music.app
     '';
   };
 }

@@ -18,6 +18,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.opt.wrap = false
+vim.opt.swapfile = false
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 

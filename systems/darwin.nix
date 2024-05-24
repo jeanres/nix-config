@@ -14,11 +14,20 @@
     };
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "ruby-2.7.8"
+  ];
+
   services.nix-daemon.enable = true;
 
   programs.zsh.enable = true;
 
   system = {
+    defaults = {
+      dock = {
+        mru-spaces = false;
+      };
+    };
     keyboard = {
       enableKeyMapping = true;
       remapCapsLockToEscape = true;

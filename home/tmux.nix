@@ -8,6 +8,7 @@
       set-option -g status-position top
       set -g status-interval 5
       set -g automatic-rename on
+      set -g renumber-windows on
       set -g automatic-rename-format '#{pane_current_command}'
       '';
     plugins = with pkgs; [

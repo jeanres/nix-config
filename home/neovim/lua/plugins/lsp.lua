@@ -10,6 +10,7 @@ return {
 			buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
 			local opts = { buffer = bufnr, noremap = true, silent = true }
+			vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 			vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)

@@ -19,6 +19,9 @@
     casks = [
       "docker"
       "vimari"
+      "obs"
+      "obs-ndi"
+      "tableplus"
     ];
   };
 }
