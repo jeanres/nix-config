@@ -9,7 +9,6 @@
     };
 
     taps = [
-      "homebrew/cask-fonts"
       "vladdoster/formulae"
     ];
 
@@ -22,6 +21,9 @@
       "obs"
       "obs-ndi"
       "tableplus"
+      "microsoft-teams"
+      "slack"
+      "transmission"
     ];
   };
 }

@@ -4,7 +4,7 @@
 		extraConfig = ''
 			return {
 				hide_tab_bar_if_only_one_tab = true,
-				color_scheme = 'Oxocarbon Dark (Gogh)',
+				color_scheme = "Catppuccin Mocha", -- or Macchiato, Frappe, Latte
 				font = wezterm.font('JetBrains Mono', { }),
 				font_size = 18,
 				window_padding = {

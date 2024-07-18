@@ -1,5 +1,8 @@
 {...}:
 {
+	programs.lazygit = {
+		enable = true;
+	};
 	programs.git = {
 		enable = true;
 		userEmail = "jeanres@icloud.com";
