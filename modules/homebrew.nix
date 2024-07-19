@@ -24,6 +24,7 @@
       "microsoft-teams"
       "slack"
       "transmission"
+      "utm"
     ];
   };
 }
