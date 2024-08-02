@@ -8,6 +8,7 @@
     ./neovim.nix
     ./wezterm.nix
     ./tmux.nix
+    ./amethyst.nix
   ];
 
   home = {

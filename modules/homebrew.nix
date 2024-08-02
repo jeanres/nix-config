@@ -16,15 +16,8 @@
     ];
 
     casks = [
-      "docker"
       "vimari"
-      "obs"
-      "obs-ndi"
-      "tableplus"
-      "microsoft-teams"
-      "slack"
-      "transmission"
-      "utm"
+      "amethyst"
     ];
   };
 }
