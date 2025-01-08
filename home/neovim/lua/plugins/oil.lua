@@ -1,13 +1,8 @@
-return {  
-	'stevearc/oil.nvim',
-	config = function()
-		require('oil').setup({
-			keymaps = {
-				["<Esc>"] = "actions.close" 
-			}
-		})
-	end,
-	keys = {
-		{ '-', '<cmd>Oil<cr>', mode = 'n' },
-	} 
+return {
+  'stevearc/oil.nvim',
+  ---@module 'oil'
+  ---@type oil.SetupOpts
+  opts = {},
+  -- Optional dependencies
+  dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
 }

@@ -34,12 +34,9 @@ return {
 			on_attach = on_attach,
 		})
 
-		config["rnix"].setup({
+		config["ts_ls"].setup({
 			on_attach = on_attach,
-		})
 
-		config["tsserver"].setup({
-			on_attach = on_attach,
 		})
 
 		config["omnisharp"].setup({

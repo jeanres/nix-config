@@ -19,16 +19,15 @@
 	system = "aarch64-darwin"; # use "x86_64-darwin" on pre-M1 Mac
 	  modules = [
 	    ./systems/darwin.nix
-	    ./modules/services/shkd.nix
 	    ./modules/homebrew.nix
 	    {	
-	      users.users."jeanre.swanepoel".home = "/Users/jeanre.swanepoel";
+	      users.users."jeanreswanepoel".home = "/Users/jeanreswanepoel";
 	    }
 	    home-manager.darwinModules.home-manager
 	    {
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
-	      home-manager.users."jeanre.swanepoel" = import ./home;
+	      home-manager.users."jeanreswanepoel" = import ./home;
 	    }
 	  ];
       };

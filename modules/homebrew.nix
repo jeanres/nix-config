@@ -8,16 +8,14 @@
       cleanup = "zap";
     };
 
-    taps = [
-      "vladdoster/formulae"
-    ];
-
     brews = [
     ];
 
     casks = [
-      "vimari"
-      "amethyst"
+      "docker"
+      "slack"
+      "microsoft-teams"
+      "obs"
     ];
   };
 }
