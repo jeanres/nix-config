@@ -11,6 +11,7 @@ return   { -- Autoformat
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        cs = { 'csharpier' },
       },
     },
   }

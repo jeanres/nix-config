@@ -26,6 +26,7 @@
     defaults = {
       dock = {
         mru-spaces = false;
+        autohide = true;
       };
     };
     keyboard = {

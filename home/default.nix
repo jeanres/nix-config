@@ -11,7 +11,7 @@
   ];
 
   home = {
-    homeDirectory = "/Users/jeanreswanepoel";
+    homeDirectory = "/Users/jeanre.swanepoel";
     stateVersion = "24.05";
   };
 

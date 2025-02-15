@@ -15,7 +15,7 @@
       "docker"
       "slack"
       "microsoft-teams"
-      "obs"
+      "orcaslicer"
     ];
   };
 }
