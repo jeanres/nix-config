@@ -23,6 +23,7 @@ vim.opt.swapfile = false
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n","<leader>gg", "<CMD>LazyGit<CR>")
+vim.keymap.set("n", "<space>e", "<CMD>lua vim.diagnostic.open_float(0, {scope='line'})<CR>")
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',

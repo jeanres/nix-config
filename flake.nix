@@ -21,13 +21,13 @@
 	    ./systems/darwin.nix
 	    ./modules/homebrew.nix
 	    {	
-	      users.users."jeanreswanepoel".home = "/Users/jeanreswanepoel";
+	      users.users."jeanre.swanepoel".home = "/Users/jeanre.swanepoel";
 	    }
 	    home-manager.darwinModules.home-manager
 	    {
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
-	      home-manager.users."jeanreswanepoel" = import ./home;
+	      home-manager.users."jeanre.swanepoel" = import ./home;
 	    }
 	  ];
       };
