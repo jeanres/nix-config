@@ -10,7 +10,7 @@
       set -g prefix C-Space
       bind C-Space send-prefix
 
-      # set-option -g status-position top
+      set-option -g status-position top
 
       set-window-option -g mode-keys vi
 
