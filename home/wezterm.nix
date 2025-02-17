@@ -7,8 +7,8 @@
 				window_decorations = "RESIZE",
 				max_fps = 120,
 				color_scheme = "rose-pine", -- or Macchiato, Frappe, Latte
-				font_size = 14,
-window_padding  { left = "1cell", right = "1cell", top = "0.5cell", bottom = 0 },
+				font_size = 16,
+				window_padding  = { left = 10, right = 10, top = 10, bottom = 10 },
 			}
 		'';
 	};
