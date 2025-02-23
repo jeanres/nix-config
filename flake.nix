@@ -20,7 +20,6 @@
 	  modules = [
 	    ./systems/darwin.nix
 	    ./modules/mac-pro/homebrew.nix
-	    ./home/ollama.nix
 	    {
 	      users.users."jeanre.swanepoel".home = "/Users/jeanre.swanepoel";
 	    }
