@@ -19,7 +19,7 @@
 	system = "x86_64-darwin"; # use "x86_64-darwin" on pre-M1 Mac
 	  modules = [
 	    ./systems/darwin.nix
-	    ./modules/homebrew.nix
+	    ./modules/mac-pro/homebrew.nix
 	    {	
 	      users.users."jeanre.swanepoel".home = "/Users/jeanre.swanepoel";
 	    }
