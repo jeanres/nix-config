@@ -5,9 +5,10 @@
     ./core.nix
     ./zsh.nix
     ./git.nix
-    ./neovim.nix
-    ./wezterm.nix
     ./tmux.nix
+    ./neovim.nix
+    ./kitty.nix
+    ./aerospace.nix
   ];
 
   home = {

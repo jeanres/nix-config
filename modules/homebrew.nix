@@ -12,9 +12,11 @@
     ];
 
     casks = [
+      "kitty"
+      "rectangle"
       "docker"
-      "slack"
       "microsoft-teams"
+      "slack"
     ];
   };
 }

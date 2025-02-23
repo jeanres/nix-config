@@ -2,6 +2,8 @@ return {
 	"neovim/nvim-lspconfig",
 	config = function()
 		local config = require('lspconfig')
+
+			local capabilities = require('cmp_nvim_lsp').default_capabilities()
 		local on_attach = function (client, bufnr)
 			local function buf_set_option(...)
 				vim.api.nvim_buf_set_option(bufnr, ...)
@@ -40,8 +42,14 @@ return {
 		})
 
 		config["omnisharp"].setup({
+				capabilities = capabilities,
 			cmd = { "omnisharp" },
 			on_attach = on_attach,
+		enable_roslyn_analysers = true,
+				enable_import_completion = true,
+				organize_imports_on_format = true,
+				enable_decompilation_support = true,
+
 		})
 	end
 }

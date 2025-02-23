@@ -7,6 +7,7 @@
 	programs.eza = {
 		enable = true;
 	};
+	programs.htop.enable = true;
 	programs.fzf = {
 		enable = true;
 	};

@@ -10,8 +10,20 @@ return {
   config = function()
     require("neotest").setup({
       adapters = {
-        require("neotest-dotnet")
+        require("neotest-dotnet")({
+          dap = {
+            args = {justMyCode = false },
+            adapter_name = "coreclr"
+          },
+          dotnet_additional_args = {
+            "--verbosity detailed"
+          },
+          discovery_root = "project" -- Default
+        })
       }
     })
-  end
+  end,
+  keys = {
+    { "<leader>td", "<cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>" }
+  },
 }
