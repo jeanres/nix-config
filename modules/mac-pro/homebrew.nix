@@ -24,6 +24,7 @@
       "aerospace"
       "vimari"
       "android-studio"
+      "rider"
     ];
   };
 }
