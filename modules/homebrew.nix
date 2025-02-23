@@ -8,15 +8,23 @@
       cleanup = "zap";
     };
 
+    taps = [
+      "FelixKratz/formulae"
+      "nikitabobko/tap"
+      "vladdoster/formulae"
+    ];
+
     brews = [
+      "borders"
     ];
 
     casks = [
       "kitty"
-      "rectangle"
       "docker"
       "microsoft-teams"
       "slack"
+      "aerospace"
+      "vimari"
     ];
   };
 }

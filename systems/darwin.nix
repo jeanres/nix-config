@@ -24,9 +24,6 @@
 
   system = {
     defaults = {
-      NSGlobalDomain = {
-        _HIHideMenuBar = true;
-      };
       dock = {
         mru-spaces = false;
         autohide = true;
