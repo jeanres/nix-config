@@ -20,7 +20,6 @@
     casks = [
       "kitty"
       "docker"
-      "aerospace"
       "vimari"
       "android-studio"
       "rider"
