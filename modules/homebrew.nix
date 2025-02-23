@@ -25,6 +25,7 @@
       "slack"
       "aerospace"
       "vimari"
+      "rustdesk"
     ];
   };
 }

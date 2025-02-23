@@ -23,6 +23,7 @@
       "vimari"
       "android-studio"
       "rider"
+      "rustdesk"
     ];
   };
 }
