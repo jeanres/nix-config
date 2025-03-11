@@ -29,6 +29,12 @@
       "insomnia"
       "datagrip"
       "google-chrome"
+<<<<<<< Updated upstream
+=======
+      "android-studio"
+      "font-hack-nerd-font"
+      "sf-symbols"
+>>>>>>> Stashed changes
     ];
   };
 }
