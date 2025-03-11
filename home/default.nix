@@ -9,6 +9,7 @@
     ./kitty.nix
     ./neovim.nix
     ./aerospace.nix
+    ./sketchybar.nix
   ];
 
   home = {
