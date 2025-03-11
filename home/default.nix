@@ -6,8 +6,8 @@
     ./zsh.nix
     ./git.nix
     ./tmux.nix
-    ./neovim.nix
     ./kitty.nix
+    ./neovim.nix
     ./aerospace.nix
   ];
 
@@ -18,4 +18,7 @@
 
   programs.home-manager.enable = true;
   programs.direnv.enable = true;
+  programs.htop.enable = true;
+
+  programs.yazi.enable = true;
 }

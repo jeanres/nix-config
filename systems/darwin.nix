@@ -18,7 +18,7 @@
     "ruby-2.7.8"
   ];
 
-  services.nix-daemon.enable = true;
+           system.stateVersion = 6;
 
   programs.zsh.enable = true;
 

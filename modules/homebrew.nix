@@ -4,7 +4,7 @@
     enable = true;
 
     onActivation = {
-      autoUpdate = false;
+      autoUpdate = true;
       cleanup = "zap";
     };
 
@@ -25,7 +25,10 @@
       "slack"
       "aerospace"
       "vimari"
-      "rustdesk"
+      "tableplus"
+      "insomnia"
+      "datagrip"
+      "google-chrome"
     ];
   };
 }

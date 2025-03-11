@@ -6,6 +6,9 @@
     autosuggestion = {
       enable = true;
     };
+    initExtra = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    '';
     shellAliases = 
       {
         dr = "darwin-rebuild switch --flake .";
