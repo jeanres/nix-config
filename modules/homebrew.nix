@@ -16,6 +16,7 @@
 
     brews = [
       "borders"
+      "sketchybar"
     ];
 
     casks = [

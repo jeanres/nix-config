@@ -82,4 +82,3 @@ sketchybar --add item clock right \
            --subscribe battery system_woke power_source_change
 
 ##### Force all scripts to run the first time (never do this in a script) #####
-s
