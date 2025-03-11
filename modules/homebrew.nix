@@ -31,6 +31,7 @@
       "datagrip"
       "google-chrome"
       "android-studio"
+      "font-hack-nerd-font"
     ];
   };
 }
