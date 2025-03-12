@@ -8,6 +8,9 @@
     };
     initExtra = ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
+ export PATH=$HOME/Downloads/flutter/bin:$PATH
     '';
     shellAliases = 
       {
