@@ -16,7 +16,6 @@
 
     brews = [
       "borders"
-      "sketchybar"
     ];
 
     casks = [
@@ -31,7 +30,6 @@
       "datagrip"
       "google-chrome"
       "android-studio"
-      "font-hack-nerd-font"
     ];
   };
 }

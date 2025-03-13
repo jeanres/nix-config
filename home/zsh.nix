@@ -16,8 +16,16 @@
       {
         dr = "darwin-rebuild switch --flake .";
         dt = "dotnet test";
+        cat = "bat";
       };
   };
+
+  programs.thefuck = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.bat.enable = true;
 
   programs.starship = {
     enable = true;

@@ -24,6 +24,12 @@
 
   system = {
     defaults = {
+      NSGlobalDomain = {
+        _HIHideMenuBar = true;
+      };
+      screencapture = {
+        location = "~/Documents/Screenshots";
+      };
       dock = {
         mru-spaces = false;
         autohide = true;

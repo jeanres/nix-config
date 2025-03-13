@@ -9,7 +9,6 @@
     ./kitty.nix
     ./neovim.nix
     ./aerospace.nix
-    ./sketchybar.nix
   ];
 
   home = {
@@ -20,6 +19,5 @@
   programs.home-manager.enable = true;
   programs.direnv.enable = true;
   programs.htop.enable = true;
-
   programs.yazi.enable = true;
 }

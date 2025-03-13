@@ -67,13 +67,8 @@ automatically-unhide-macos-hidden-apps = false
     inner.vertical =   20
     outer.left =       20
     outer.bottom =     20
-    outer.top =        60
+    outer.top =        20
     outer.right =      20
-
-[workspace-to-monitor-force-assignment]
-    4 = "secondary"
-    5 = 'secondary'
-    6 = 'secondary'
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -134,6 +129,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
     alt-6 = 'workspace 6'
+    alt-7 = 'workspace 7'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -142,6 +138,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-4 = 'move-node-to-workspace 4'
     alt-shift-5 = 'move-node-to-workspace 5'
     alt-shift-6 = 'move-node-to-workspace 6'
+    alt-shift-7 = 'move-node-to-workspace 7'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -184,22 +181,18 @@ automatically-unhide-macos-hidden-apps = false
     run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.Music'
+    if.app-id = 'com.microsoft.teams2'
     run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
-    if.app-id = 'com.microsoft.teams2'
-    run = ['move-node-to-workspace 5']
-
-[[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgap'
-    run = ['move-node-to-workspace 5']
+    run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
     if.app-id = 'com.apple.iCal'
-    run = ['move-node-to-workspace 6']
+    run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
     if.app-id = 'com.apple.mail'
-    run = ['move-node-to-workspace 6']
+    run = ['move-node-to-workspace 5']
 
