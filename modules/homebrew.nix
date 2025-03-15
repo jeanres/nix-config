@@ -30,6 +30,7 @@
       "datagrip"
       "google-chrome"
       "android-studio"
+      "beekeeper-studio"
     ];
   };
 }

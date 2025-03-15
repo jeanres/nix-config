@@ -20,4 +20,5 @@
   programs.direnv.enable = true;
   programs.htop.enable = true;
   programs.yazi.enable = true;
+  programs.irssi.enable = true;
 }

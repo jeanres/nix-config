@@ -185,7 +185,7 @@ automatically-unhide-macos-hidden-apps = false
     run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
-    if.app-id = 'com.tinyspeck.slackmacgap'
+    if.app-id = 'com.tinyspeck.slackmacgapp'
     run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
