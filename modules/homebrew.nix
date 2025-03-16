@@ -31,6 +31,7 @@
       "google-chrome"
       "android-studio"
       "beekeeper-studio"
+      "font-fantasque-sans-mono-nerd-font"
     ];
   };
 }

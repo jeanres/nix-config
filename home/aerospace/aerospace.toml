@@ -10,15 +10,10 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-    'exec-and-forget borders active_color=0xff31748f inactive_color=0xff494d64 width=8.0 style=round hidpi=on',
-    'exec-and-forget sketchybar'
+    'exec-and-forget borders active_color=0xff31748f inactive_color=0xff494d64 width=8.0 style=round hidpi=on'
 ]
 # Start AeroSpace at login
 start-at-login = true
-
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-]
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -148,6 +143,10 @@ automatically-unhide-macos-hidden-apps = false
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
 
+[workspace-to-monitor-force-assignment]
+    7 = "secondary"
+
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -177,22 +176,18 @@ automatically-unhide-macos-hidden-apps = false
     run = ['move-node-to-workspace 2'] 
 
 [[on-window-detected]]
-    if.app-id = 'com.tinyapp.TablePlus'
+    if.app-id = 'com.microsoft.teams2'
     run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
-    if.app-id = 'com.microsoft.teams2'
-    run = ['move-node-to-workspace 4']
-
-[[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgapp'
-    run = ['move-node-to-workspace 4']
+    run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
     if.app-id = 'com.apple.iCal'
-    run = ['move-node-to-workspace 5']
+    run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
     if.app-id = 'com.apple.mail'
-    run = ['move-node-to-workspace 5']
+    run = ['move-node-to-workspace 4']
 

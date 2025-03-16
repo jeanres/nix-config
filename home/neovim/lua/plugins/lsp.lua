@@ -3,7 +3,7 @@ return {
 	config = function()
 		local config = require('lspconfig')
 
-			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 		local on_attach = function (client, bufnr)
 			local function buf_set_option(...)
 				vim.api.nvim_buf_set_option(bufnr, ...)
@@ -36,20 +36,24 @@ return {
 			on_attach = on_attach,
 		})
 
-		config["ts_ls"].setup({
+		config["dartls"].setup({
 			on_attach = on_attach,
 
 		})
 
-		config["omnisharp"].setup({
-				capabilities = capabilities,
-			cmd = { "omnisharp" },
+		config["ts_ls"].setup({
 			on_attach = on_attach,
-		enable_roslyn_analysers = true,
-				enable_import_completion = true,
-				organize_imports_on_format = true,
-				enable_decompilation_support = true,
+		})
 
+		config["omnisharp"].setup({
+			capabilities = capabilities,
+			cmd = { "omnisharp" },
+			settings = {
+				FormattingOptions = {
+					OrganizeImports = true,
+				},
+			},
+			on_attach = on_attach,
 		})
 	end
 }

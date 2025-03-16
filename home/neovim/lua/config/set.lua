@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 vim.opt.relativenumber = true
-vim.opt.cmdheight = 0
+vim.opt.number = true
 vim.opt.laststatus = 3
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.breakindent = true
@@ -20,6 +20,7 @@ vim.opt.hlsearch = true
 vim.opt.wrap = false
 vim.opt.swapfile = false
 
+vim.keymap.set('i', 'jj', '<Esc>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n","<leader>gg", "<CMD>LazyGit<CR>")
