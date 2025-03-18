@@ -15,4 +15,10 @@
 		enable = true;
 		enableZshIntegration = true;
 	};
+	xdg.configFile = {
+		"scripts" = {
+			source = ./scripts;
+			recursive = true;
+		};
+	};
 }

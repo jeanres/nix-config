@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -14,6 +14,9 @@
   home = {
     homeDirectory = "/Users/jeanre.swanepoel";
     stateVersion = "24.05";
+    packages = with pkgs; [
+      lazydocker
+    ];
   };
 
   programs.home-manager.enable = true;

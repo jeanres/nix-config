@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ ... }:
 {
   homebrew = {
     enable = true;
@@ -25,13 +25,13 @@
       "slack"
       "aerospace"
       "vimari"
-      "tableplus"
-      "insomnia"
       "datagrip"
       "google-chrome"
       "android-studio"
       "beekeeper-studio"
       "font-fantasque-sans-mono-nerd-font"
+      "obs"
+      "discord"
     ];
   };
 }

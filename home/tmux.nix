@@ -20,6 +20,10 @@
       set -g renumber-windows on
       set -g automatic-rename-format '#{pane_current_command}'
       set -g history-limit 5000
+
+      bind-key -r f run-shell "tmux neww ~/.config/scripts/tmux-sessionizer.sh"
+
+      bind r source-file ~/.config/tmux/tmux.conf \; display-message "source-file reloaded"
       '';
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
