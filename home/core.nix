@@ -1,3 +1,4 @@
+
 {
 	home.shellAliases = {
 		cd = "z";

@@ -1,19 +1,13 @@
 return { 
-    "rose-pine/neovim", 
-    name = "rose-pine",
+    "catppuccin/nvim", name = "catppuccin", priority = 1000,
     config = function()
-	require("rose-pine").setup({
-	    enable = {
-		terminal = true,
-		legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-	    },
-
-	    styles = {
-		bold = true,
-		italic = true,
-		transparency = false,
-	    },
-	})
-	vim.cmd("colorscheme rose-pine")
+        require("catppuccin").setup({
+            flavour = "mocha", -- latte, frappe, macchiato, mocha
+            background = { -- :h background
+                light = "latte",
+                dark = "mocha",
+            },
+        })
+        vim.cmd.colorscheme "catppuccin"
     end
 }
