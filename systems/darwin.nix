@@ -18,7 +18,7 @@
     "ruby-2.7.8"
   ];
 
-    system.stateVersion = 6;
+  system.stateVersion = 6;
 
   programs.zsh.enable = true;
 

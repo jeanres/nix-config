@@ -13,7 +13,8 @@
     };
   };
 
-  outputs = { self, nixpkgs, darwin, home-manager }: {
+  outputs = { self, nixpkgs, darwin, home-manager}:
+    {
     darwinConfigurations = {
       "Jeanres-Mac-Pro" = darwin.lib.darwinSystem {
 	system = "x86_64-darwin"; # use "x86_64-darwin" on pre-M1 Mac

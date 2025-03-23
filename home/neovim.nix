@@ -1,9 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 {
 	programs.neovim = {
 		enable = true;
 		defaultEditor = true;
 		vimAlias = true;
+		package = pkgs.neovim-unwrapped;
 	};
 
 	xdg.configFile = {

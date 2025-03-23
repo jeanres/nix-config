@@ -20,7 +20,10 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.opt.wrap = false
 vim.opt.swapfile = false
-
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.softtabstop = 2
 vim.keymap.set('i', 'jj', '<Esc>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

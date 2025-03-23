@@ -1,9 +1,20 @@
 return {
 	"neovim/nvim-lspconfig",
+	dependencies = {
+		{ 
+			"seblyng/roslyn.nvim",   
+			opts = {
+				exe = 'Microsoft.CodeAnalysis.LanguageServer',
+				filewatching = "roslyn"
+			}
+		},
+		{ 'saghen/blink.cmp' }
+	},
 	config = function()
 		local config = require('lspconfig')
 
-		local capabilities = require('cmp_nvim_lsp').default_capabilities()
+		local capabilities = require('blink.cmp').get_lsp_capabilities()
+
 		local on_attach = function (client, bufnr)
 			local function buf_set_option(...)
 				vim.api.nvim_buf_set_option(bufnr, ...)
@@ -36,24 +47,22 @@ return {
 			on_attach = on_attach,
 		})
 
+		config["gopls"].setup({
+			on_attach = on_attach,
+		})
+
 		config["dartls"].setup({
 			on_attach = on_attach,
-
 		})
 
 		config["ts_ls"].setup({
 			on_attach = on_attach,
 		})
 
-		config["omnisharp"].setup({
-			capabilities = capabilities,
-			cmd = { "omnisharp" },
-			settings = {
-				FormattingOptions = {
-					OrganizeImports = true,
-				},
+		require("roslyn").setup({
+			config = {
+				on_attach = on_attach 
 			},
-			on_attach = on_attach,
 		})
 	end
 }

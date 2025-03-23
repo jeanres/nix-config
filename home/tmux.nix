@@ -37,7 +37,8 @@
       set -g automatic-rename on
       set -g renumber-windows on
       set -g automatic-rename-format '#{pane_current_command}'
-      set -g history-limit 5000
+      set -g history-limit 50000
+
 
       '';
     plugins = with pkgs; [
@@ -99,12 +100,10 @@
 
           set -g window-status-current-format " #I#{?#{!=:#{window_name},Window},: #W,} "
           set -g window-status-current-style "fg=#{@thm_green},bold"
-
         '';
       }
       tmuxPlugins.battery
       tmuxPlugins.online-status
- 
     ];
   };
 }

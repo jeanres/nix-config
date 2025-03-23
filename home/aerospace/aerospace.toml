@@ -10,7 +10,7 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-    'exec-and-forget borders active_color=0xff31748f inactive_color=0xff494d64 width=8.0 style=round hidpi=on'
+    'exec-and-forget borders style=round active_color=0xFF40A02B inactive_color=0xff494d64 width=8.0 hidpi=on',
 ]
 # Start AeroSpace at login
 start-at-login = true
@@ -22,7 +22,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 0
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -37,7 +37,8 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focused-monitor-changed = ['move-mouse monitor-force-center']
+on-focus-changed = ['move-mouse window-force-center']
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -58,12 +59,12 @@ automatically-unhide-macos-hidden-apps = true
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 20
-    inner.vertical =   20
-    outer.left =       20
-    outer.bottom =     20
-    outer.top =        20
-    outer.right =      20
+    inner.horizontal = 25
+    inner.vertical =   25
+    outer.left =       25
+    outer.bottom =     25
+    outer.top =        25
+    outer.right =      25
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -125,6 +126,7 @@ automatically-unhide-macos-hidden-apps = true
     alt-5 = 'workspace 5'
     alt-6 = 'workspace 6'
     alt-7 = 'workspace 7'
+    alt-8 = 'workspace 8'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -134,6 +136,7 @@ automatically-unhide-macos-hidden-apps = true
     alt-shift-5 = 'move-node-to-workspace 5'
     alt-shift-6 = 'move-node-to-workspace 6'
     alt-shift-7 = 'move-node-to-workspace 7'
+    alt-shift-8 = 'move-node-to-workspace 8'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -144,7 +147,7 @@ automatically-unhide-macos-hidden-apps = true
     alt-shift-semicolon = 'mode service'
 
 [workspace-to-monitor-force-assignment]
-    7 = "secondary"
+    8 = "secondary"
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -178,14 +181,5 @@ automatically-unhide-macos-hidden-apps = true
     run = ['move-node-to-workspace 3']
 
 [[on-window-detected]]
-    if.app-id = 'com.tinyspeck.slackmacgapp'
-    run = ['move-node-to-workspace 3']
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.iCal'
+    if.app-id = 'com.tinyspeck.slackmacgap'
     run = ['move-node-to-workspace 4']
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.mail'
-    run = ['move-node-to-workspace 4']
-

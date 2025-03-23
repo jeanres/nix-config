@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -16,6 +16,7 @@
     stateVersion = "24.05";
     packages = with pkgs; [
       lazydocker
+      tldr
     ];
   };
 
@@ -23,4 +24,6 @@
   programs.direnv.enable = true;
   programs.htop.enable = true;
   programs.yazi.enable = true;
+
+
 }
