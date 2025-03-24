@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 
+vim.opt.termguicolors = true
 vim.opt.cmdheight = 0
 vim.opt.relativenumber = true
 vim.opt.number = true
@@ -24,6 +25,7 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.softtabstop = 2
+
 vim.keymap.set('i', 'jj', '<Esc>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

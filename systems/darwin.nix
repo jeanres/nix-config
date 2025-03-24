@@ -12,7 +12,10 @@
       interval = { Weekday = 0; Hour = 0; Minute = 0; };
       options = "--delete-older-than 30d";
     };
+
   };
+
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   nixpkgs.config.permittedInsecurePackages = [
     "ruby-2.7.8"

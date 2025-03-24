@@ -59,6 +59,10 @@ return {
 			on_attach = on_attach,
 		})
 
+		config["terraformls"].setup({
+			on_attach = on_attach,
+		})
+
 		require("roslyn").setup({
 			config = {
 				on_attach = on_attach 

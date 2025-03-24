@@ -10,7 +10,7 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-    'exec-and-forget borders style=round active_color=0xFF40A02B inactive_color=0xff494d64 width=8.0 hidpi=on',
+    'exec-and-forget borders style=round active_color=0xff04a5e5 inactive_color=0xff494d64 width=8.0 hidpi=on',
 ]
 # Start AeroSpace at login
 start-at-login = true
@@ -59,12 +59,12 @@ automatically-unhide-macos-hidden-apps = true
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 25
-    inner.vertical =   25
-    outer.left =       25
-    outer.bottom =     25
-    outer.top =        25
-    outer.right =      25
+    inner.horizontal = 30 
+    inner.vertical =  30
+    outer.left =     30 
+    outer.bottom =  30 
+    outer.top =      30 
+    outer.right =    30 
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
