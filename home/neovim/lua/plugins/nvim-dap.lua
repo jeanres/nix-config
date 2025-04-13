@@ -3,7 +3,7 @@ return {
     config = function()
         local dap = require('dap')
 
-        dap.adapters.coreclr = {
+        dap.adapters.netcoredbg = {
             type = 'executable',
             command = 'netcoredbg',
             args = {'--interpreter=vscode'}

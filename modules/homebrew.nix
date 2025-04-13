@@ -25,13 +25,8 @@
       "slack"
       "aerospace"
       "vimari"
-      "datagrip"
       "google-chrome"
-      "android-studio"
-      "beekeeper-studio"
       "font-fantasque-sans-mono-nerd-font"
-      "obs"
-      "discord"
     ];
   };
 }

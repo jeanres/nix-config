@@ -5,11 +5,7 @@
     baseIndex = 1;
 
     extraConfig = ''
-      unbind C-b
-
       set -g default-terminal "tmux-256color"
-      set -g prefix C-Space
-      bind C-Space send-prefix
 
       set -g status-position top
 
