@@ -59,6 +59,16 @@ return {
 			on_attach = on_attach,
 		})
 
+		config["lua_ls"].setup({
+			on_attach = on_attach,
+		})
+
+		config["nixd"].setup({
+			on_attach = on_attach,
+		})
+
+
+
 		config["terraformls"].setup({
 			on_attach = on_attach,
 		})
