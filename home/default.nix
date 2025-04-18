@@ -17,7 +17,15 @@
   };
 
   programs.home-manager.enable = true;
-  programs.direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    config = {
+      global = {
+        log_filter="^$";
+      };
+    };
+  };
   programs.htop.enable = true;
   programs.yazi.enable = true;
 }

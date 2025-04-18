@@ -16,6 +16,7 @@
 
     brews = [
       "borders"
+      "reattach-to-user-namespace"
     ];
 
     casks = [
