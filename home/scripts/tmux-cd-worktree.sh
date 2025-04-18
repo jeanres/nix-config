@@ -1,6 +1,5 @@
 gitdir=""
 while [ "$dir" != "/" ]; do
-  echo "Checking directory: $dir"
   if [ -d "$dir/.bare" ]; then
     gitdir="$dir/.bare"
     break

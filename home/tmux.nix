@@ -36,7 +36,9 @@
       set -g automatic-rename-format '#{pane_current_command}'
       set -g history-limit 50000
 
-
+      bind  c  new-window      -c "#{pane_current_path}"
+      bind  %  split-window -h -c "#{pane_current_path}"
+      bind '"' split-window -v -c "#{pane_current_path}"
       '';
     plugins = with pkgs; [
      tmuxPlugins.vim-tmux-navigator
