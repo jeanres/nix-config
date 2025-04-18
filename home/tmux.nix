@@ -5,11 +5,12 @@
     baseIndex = 1;
 
     extraConfig = ''
-      set -g default-terminal "tmux-256color"
-
+      set -g default-terminal "xterm-256color"
+      set-option -ga terminal-overrides ",xterm-256color:Tc"
       set -g status-position top
 
       bind-key -r f run-shell "tmux neww ~/.config/scripts/tmux-sessionizer.sh"
+      bind-key -r w run-shell "tmux neww ~/.config/scripts/tmux-cd-worktree.sh"
 
       bind r source-file ~/.config/tmux/tmux.conf \; display-message "source-file reloaded"
 

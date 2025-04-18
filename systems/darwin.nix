@@ -17,9 +17,8 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "ruby-2.7.8"
-  ];
+  services.openssh.enable = true;
+
 
   system.stateVersion = 6;
 

@@ -26,7 +26,8 @@
       "aerospace"
       "vimari"
       "google-chrome"
-      "font-fantasque-sans-mono-nerd-font"
+      "android-studio"
+      "font-jetbrains-mono-nerd-font"
     ];
   };
 }

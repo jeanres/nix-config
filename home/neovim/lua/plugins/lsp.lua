@@ -43,7 +43,7 @@ return {
 			vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 		end
 
-		config["solargraph"].setup({
+		config["ruby_lsp"].setup({
 			on_attach = on_attach,
 		})
 
