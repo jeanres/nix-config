@@ -1,11 +1,13 @@
-return { 
-    "catppuccin/nvim", name = "catppuccin", priority = 1000,
+return {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
     config = function()
         require("catppuccin").setup({
             integration = {
-                blink_cmp = true 
+                blink_cmp = true
             }
         })
-        vim.cmd.colorscheme "catppuccin-mocha"
+        vim.cmd.colorscheme "catppuccin-latte"
     end
 }
