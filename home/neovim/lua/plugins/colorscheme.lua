@@ -8,6 +8,9 @@ return {
 				blink_cmp = true,
 			},
 		})
-		vim.cmd.colorscheme("catppuccin-mocha")
+		--set background to light
+		vim.o.background = "light"
+
+		vim.cmd.colorscheme("catppuccin")
 	end,
 }

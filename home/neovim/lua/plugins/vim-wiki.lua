@@ -6,7 +6,7 @@ return {
 		vim.g.vimwiki_list = {
 			{
 				-- Here will be the path for your wiki
-				path = "/Users/jeanre.swanepoel/Documents/vimwiki",
+				path = "/Users/jeanre.swanepoel/Documents/Notes",
 				-- The syntax for the wiki
 				ext = "wiki",
 			},
