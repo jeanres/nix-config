@@ -9,7 +9,6 @@
     shellAliases = 
       {
         dr = "darwin-rebuild switch --flake .";
-        dt = "dotnet test";
         cat = "bat";
       };
   };

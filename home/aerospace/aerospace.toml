@@ -58,12 +58,12 @@ automatically-unhide-macos-hidden-apps = true
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 50 
-    inner.vertical =  50
-    outer.left =     50 
-    outer.bottom =  50 
-    outer.top =      50 
-    outer.right =    50 
+    inner.horizontal = 30 
+    inner.vertical =  30
+    outer.left =     30 
+    outer.bottom =  30 
+    outer.top =      30 
+    outer.right =    30 
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -176,9 +176,16 @@ automatically-unhide-macos-hidden-apps = true
     run = ['move-node-to-workspace 1'] 
 
 [[on-window-detected]]
+    if.app-id = 'com.apple.freeform'
+    run = ['move-node-to-workspace 2'] 
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.mail'
+    run = ['move-node-to-workspace 6']
+
+[[on-window-detected]]
     if.app-id = 'com.microsoft.teams2'
     run = ['move-node-to-workspace 7']
-
 [[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgap'
     run = ['move-node-to-workspace 8']
