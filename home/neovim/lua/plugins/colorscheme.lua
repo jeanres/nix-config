@@ -9,7 +9,6 @@ return {
 			},
 		})
 		--set background to light
-		vim.o.background = "light"
 
 		vim.cmd.colorscheme("catppuccin")
 	end,
