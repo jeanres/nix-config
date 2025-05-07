@@ -3,7 +3,7 @@
     enable = true;
     enableCompletion = true;
     defaultKeymap = "viins";
-    initExtra = ''
+    initContent = ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
     shellAliases = 

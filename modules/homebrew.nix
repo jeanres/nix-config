@@ -28,7 +28,10 @@
       "vimari"
       "google-chrome"
       "android-studio"
+      "postman"
       "font-jetbrains-mono-nerd-font"
+      "utm"
+      "tableplus"
     ];
   };
 }

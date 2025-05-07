@@ -146,9 +146,7 @@ automatically-unhide-macos-hidden-apps = true
     alt-shift-semicolon = 'mode service'
 
 [workspace-to-monitor-force-assignment]
-    6 = "secondary"
-    7 = "secondary"
-    8 = "secondary"
+    8 = 'secondary'                  # Non-main monitor in case when there are only two monitors
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -175,22 +173,20 @@ automatically-unhide-macos-hidden-apps = true
 
 [[on-window-detected]]
     if.app-id = 'com.apple.freeform'
-    run = ['move-node-to-workspace 2'] 
+    run = ['move-node-to-workspace 3'] 
 
 [[on-window-detected]]
     if.app-id = 'com.apple.mail'
-    run = ['move-node-to-workspace 6']
+    run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
     if.app-id = 'com.microsoft.teams2'
-    run = ['move-node-to-workspace 7']
+    run = ['move-node-to-workspace 6']
 
 [[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgap'
-    run = ['move-node-to-workspace 8']
+    run = ['move-node-to-workspace 7']
 
 [[on-window-detected]]
     if.app-id = 'com.apple.Safari'
-    run = ['move-node-to-workspace 1'] 
-
-
+    run = ['move-node-to-workspace 2'] 
