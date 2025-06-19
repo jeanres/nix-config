@@ -2,11 +2,6 @@ return {
 	"saghen/blink.cmp",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
-		"fang2hou/blink-copilot",
-		opts = {
-			max_completions = 1, -- Global default for max completions
-			max_attempts = 2, -- Global default for max attempts
-		},
 	},
 
 	-- use a release tag to download pre-built binaries
@@ -43,27 +38,12 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "copilot", "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "path", "snippets", "buffer" },
 			per_filetype = {
 				sql = { "snippets", "dadbod", "buffer" },
 			},
 			providers = {
 				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
-				copilot = {
-					name = "copilot",
-					module = "blink-copilot",
-					score_offset = 100,
-					async = true,
-					opts = {
-						-- Local options override global ones
-						max_completions = 3, -- Override global max_completions
-
-						-- Final settings:
-						-- * max_completions = 3
-						-- * max_attempts = 2
-						-- * all other options are default
-					},
-				},
 			},
 		},
 

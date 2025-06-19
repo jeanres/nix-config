@@ -11,18 +11,13 @@ return {
 		{ "saghen/blink.cmp" },
 	},
 	config = function()
-		local config = require("lspconfig")
-
+		local lspconfig = require("lspconfig")
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
+		-- Common on_attach function
 		local on_attach = function(client, bufnr)
-			local function buf_set_option(...)
-				vim.api.nvim_buf_set_option(bufnr, ...)
-			end
-
-			buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-
 			local opts = { buffer = bufnr, noremap = true, silent = true }
+
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -43,44 +38,34 @@ return {
 			vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 		end
 
-		config["ruby_lsp"].setup({
-			on_attach = on_attach,
-		})
+		-- LSP Servers configuration
+		local servers = {
+			ruby_lsp = {},
+			gopls = {},
+			dartls = {},
+			ts_ls = {}, -- `ts_ls` corrected to `tsserver`
+			lua_ls = {},
+			nixd = {},
+			terraformls = {},
+		}
 
-		config["gopls"].setup({
-			on_attach = on_attach,
-		})
-
-		config["dartls"].setup({
-			on_attach = on_attach,
-		})
-
-		config["ts_ls"].setup({
-			on_attach = on_attach,
-		})
-
-		config["lua_ls"].setup({
-			on_attach = on_attach,
-		})
-
-		config["nixd"].setup({
-			on_attach = on_attach,
-		})
-
-		config["terraformls"].setup({
-			on_attach = on_attach,
-		})
+		for server, opts in pairs(servers) do
+			lspconfig[server].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				settings = opts.settings or {},
+			})
+		end
 
 		require("roslyn").setup({
-			config = {
-				cmd = {
-					"Microsoft.CodeAnalysis.LanguageServer",
-					"--logLevel=Information",
-					"--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
-					"--stdio",
-				},
-				on_attach = on_attach,
+			cmd = {
+				"Microsoft.CodeAnalysis.LanguageServer",
+				"--logLevel=Information",
+				"--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
+				"--stdio",
 			},
+			on_attach = on_attach,
+			capabilities = capabilities,
 		})
 	end,
 }
