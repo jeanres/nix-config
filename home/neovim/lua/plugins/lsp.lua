@@ -56,16 +56,6 @@ return {
 				settings = opts.settings or {},
 			})
 		end
-
-		require("roslyn").setup({
-			cmd = {
-				"Microsoft.CodeAnalysis.LanguageServer",
-				"--logLevel=Information",
-				"--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
-				"--stdio",
-			},
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
+		vim.lsp.enable("roslyn_ls")
 	end,
 }

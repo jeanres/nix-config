@@ -58,12 +58,12 @@ automatically-unhide-macos-hidden-apps = true
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 30 
+    inner.horizontal = 30
     inner.vertical =  30
-    outer.left =     30 
-    outer.bottom =  30 
-    outer.top =      30 
-    outer.right =    30 
+    outer.left =     30
+    outer.bottom =  30
+    outer.top =      30
+    outer.right =    30
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -144,9 +144,6 @@ automatically-unhide-macos-hidden-apps = true
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
-
-[workspace-to-monitor-force-assignment]
-    8 = 'secondary'                  # Non-main monitor in case when there are only two monitors
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
