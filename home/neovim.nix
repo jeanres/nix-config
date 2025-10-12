@@ -15,5 +15,10 @@
 			source = ./neovim/lua;
 			recursive = true;
 		};
+		"nvim/lsp" = {
+			source = ./neovim/lsp;
+			recursive = true;
+		};
+
 	};
 }

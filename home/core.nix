@@ -15,6 +15,7 @@
 		enable = true;
 		enableZshIntegration = true;
 	};
+	programs.tealdeer.enable = true;
 	xdg.configFile = {
 		"scripts" = {
 			source = ./scripts;

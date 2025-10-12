@@ -5,12 +5,13 @@
     baseIndex = 1;
 
     extraConfig = ''
+      set -g escape-time 0
       set -g default-terminal "xterm-256color"
       set-option -ga terminal-overrides ",xterm-256color:Tc"
       set -g status-position top
 
-      bind-key -r f run-shell "tmux neww ~/.config/scripts/tmux-sessionizer.sh"
-      bind-key -r w run-shell "tmux neww ~/.config/scripts/tmux-cd-worktree.sh"
+      bind-key g display-popup -E -w 80% -h 80% -S "fg=#{@thm_overlay_0}" lazygit
+      bind-key s display-popup -E -w 80% -h 80% -S "fg=#{@thm_overlay_0}" "tmux list-sessions -F '#S' | fzf | xargs tmux switch-client -t"
 
       bind r source-file ~/.config/tmux/tmux.conf \; display-message "source-file reloaded"
 
@@ -102,6 +103,7 @@
       }
       tmuxPlugins.battery
       tmuxPlugins.online-status
+      tmuxPlugins.tmux-toggle-popup
     ];
   };
 }

@@ -6,7 +6,6 @@ pkgs.mkShell {
     stylua
     nodejs
     nixd
-
   ];
 
   shellHook = ''

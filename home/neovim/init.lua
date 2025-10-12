@@ -1,2 +1,4 @@
-require("config.set")
-require("config.lazy")
+require("config.options")
+
+require("core.lazy")
+require("core.lsp")

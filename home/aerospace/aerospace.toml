@@ -58,12 +58,12 @@ automatically-unhide-macos-hidden-apps = true
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 30
-    inner.vertical =  30
-    outer.left =     30
-    outer.bottom =  30
-    outer.top =      30
-    outer.right =    30
+    inner.horizontal = 20
+    inner.vertical =  20
+    outer.left =     20
+    outer.bottom =  20
+    outer.top =      20
+    outer.right =    20
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -84,7 +84,6 @@ automatically-unhide-macos-hidden-apps = true
     # - Arrows.         left, down, up, right
 
     # All possible modifiers: cmd, alt, ctrl, shift
-
     # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
@@ -174,7 +173,11 @@ automatically-unhide-macos-hidden-apps = true
 
 [[on-window-detected]]
     if.app-id = 'com.apple.mail'
-    run = ['move-node-to-workspace 5']
+    run = ['move-node-to-workspace 4']
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.iCal'
+    run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
     if.app-id = 'com.microsoft.teams2'
@@ -187,3 +190,11 @@ automatically-unhide-macos-hidden-apps = true
 [[on-window-detected]]
     if.app-id = 'com.apple.Safari'
     run = ['move-node-to-workspace 2'] 
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.MobileSMS'
+    run = ['move-node-to-workspace 8'] 
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Music'
+    run = ['move-node-to-workspace 5']

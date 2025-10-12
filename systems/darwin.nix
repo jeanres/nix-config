@@ -16,6 +16,12 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  system.primaryUser = "jeanre.swanepoel";
+
+  security.sudo.extraConfig = ''
+    jeanre.swanepoel ALL=(ALL:ALL) NOPASSWD: /run/current-system/sw/bin/darwin-rebuild
+  '';
+
   services.openssh.enable = true;
 
   system.stateVersion = 6;
@@ -25,7 +31,6 @@
   system = {
     defaults = {
       NSGlobalDomain = {
-        _HIHideMenuBar = true;
       };
       screencapture = {
         location = "~/Documents/Screenshots";

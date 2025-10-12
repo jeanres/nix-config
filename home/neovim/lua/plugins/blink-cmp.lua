@@ -2,6 +2,7 @@ return {
 	"saghen/blink.cmp",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
+		"giuxtaposition/blink-cmp-copilot",
 	},
 
 	-- use a release tag to download pre-built binaries
@@ -38,12 +39,18 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "path", "snippets", "buffer", "copilot" },
 			per_filetype = {
 				sql = { "snippets", "dadbod", "buffer" },
 			},
 			providers = {
 				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+				copilot = {
+					name = "copilot",
+					module = "blink-cmp-copilot",
+					score_offset = 100,
+					async = true,
+				},
 			},
 		},
 

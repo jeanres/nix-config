@@ -5,6 +5,7 @@
 
     onActivation = {
       autoUpdate = true;
+      upgrade = true;
       cleanup = "zap";
     };
 
@@ -17,17 +18,23 @@
     brews = [
       "borders"
       "reattach-to-user-namespace"
+      "opencode"
     ];
 
     casks = [
       "kitty"
-      "docker"
+      "docker-desktop"
       "microsoft-teams"
       "slack"
       "aerospace"
       "vimari"
-      "postman"
       "font-jetbrains-mono-nerd-font"
+      "orcaslicer@nightly"
+      "creality-print"
+      "whatsapp"
+      "discord"
+      "utm"
+      "obs"
     ];
   };
 }
