@@ -2,5 +2,6 @@ vim.lsp.enable({
 	"lua_ls",
 	"nixd",
 	"roslyn_ls",
-	"ts_ls"
+	"ruby_ls",
+	"ts_ls",
 })

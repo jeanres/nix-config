@@ -9,10 +9,11 @@
     ./kitty.nix
     ./neovim.nix
     ./aerospace.nix
+    ./opencode.nix
   ];
 
   home = {
-    homeDirectory = "/Users/jeanre.swanepoel";
+    homeDirectory = "/Users/jeanre";
     stateVersion = "24.05";
   };
 

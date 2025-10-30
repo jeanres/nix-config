@@ -16,10 +16,10 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  system.primaryUser = "jeanre.swanepoel";
+  system.primaryUser = "jeanre";
 
   security.sudo.extraConfig = ''
-    jeanre.swanepoel ALL=(ALL:ALL) NOPASSWD: /run/current-system/sw/bin/darwin-rebuild
+    jeanre ALL=(ALL:ALL) NOPASSWD: ALL
   '';
 
   services.openssh.enable = true;

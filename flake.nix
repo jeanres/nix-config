@@ -21,13 +21,13 @@
 	  modules = [
 	    ./systems/darwin.nix
 	    {
-	      users.users."jeanre.swanepoel".home = "/Users/jeanre.swanepoel";
+	      users.users."jeanre".home = "/Users/jeanre";
 	    }
 	    home-manager.darwinModules.home-manager
 	    {
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
-	      home-manager.users."jeanre.swanepoel" = import ./home;
+	      home-manager.users."jeanre" = import ./home;
 	    }
 	  ];
       };
@@ -37,13 +37,13 @@
 	    ./systems/darwin.nix
 	    ./modules/homebrew.nix
 	    {	
-	      users.users."jeanre.swanepoel".home = "/Users/jeanre.swanepoel";
+	      users.users."jeanre".home = "/Users/jeanre";
 	    }
 	    home-manager.darwinModules.home-manager
 	    {
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
-	      home-manager.users."jeanre.swanepoel" = import ./home;
+	      home-manager.users."jeanre" = import ./home;
 	    }
 	  ];
       };
