@@ -42,6 +42,24 @@
 					insteadOf = [ "github:" "gh:" "git://github.com/" ];
 				};
 			};
+			# Global git hooks with OpenCode integration
+			core = {
+				hooksPath = "~/.config/git/hooks";
+			};
 		};
+	};
+
+	# Install git hooks globally
+	home.file.".config/git/hooks/pre-commit" = {
+		source = ./git-hooks/pre-commit;
+		executable = true;
+	};
+	home.file.".config/git/hooks/commit-msg" = {
+		source = ./git-hooks/commit-msg;
+		executable = true;
+	};
+	home.file.".config/git/hooks/pre-push" = {
+		source = ./git-hooks/pre-push;
+		executable = true;
 	};
 }

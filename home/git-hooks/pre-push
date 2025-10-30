@@ -1,0 +1,107 @@
+#!/usr/bin/env bash
+#
+# Pre-push hook
+# Runs tests before pushing to remote
+#
+
+set -e
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+
+echo -e "${BLUE}🚀 Running pre-push checks...${NC}"
+
+# Detect project type and run appropriate tests
+run_tests() {
+    # C# / .NET
+    if [ -f "*.csproj" ] || [ -f "*.sln" ]; then
+        echo -e "${BLUE}🧪 Running .NET tests...${NC}"
+        if dotnet test --no-build --verbosity quiet; then
+            echo -e "${GREEN}✓ .NET tests passed${NC}"
+            return 0
+        else
+            echo -e "${RED}❌ .NET tests failed${NC}"
+            return 1
+        fi
+    fi
+    
+    # Ruby / Rails
+    if [ -f "Gemfile" ]; then
+        echo -e "${BLUE}🧪 Running Ruby tests...${NC}"
+        if [ -f "bin/rails" ]; then
+            # Rails project
+            if bundle exec rails test; then
+                echo -e "${GREEN}✓ Rails tests passed${NC}"
+                return 0
+            else
+                echo -e "${RED}❌ Rails tests failed${NC}"
+                return 1
+            fi
+        elif [ -f "spec" ]; then
+            # RSpec
+            if bundle exec rspec; then
+                echo -e "${GREEN}✓ RSpec tests passed${NC}"
+                return 0
+            else
+                echo -e "${RED}❌ RSpec tests failed${NC}"
+                return 1
+            fi
+        fi
+    fi
+    
+    # Java / Maven
+    if [ -f "pom.xml" ]; then
+        echo -e "${BLUE}🧪 Running Maven tests...${NC}"
+        if mvn test -q; then
+            echo -e "${GREEN}✓ Maven tests passed${NC}"
+            return 0
+        else
+            echo -e "${RED}❌ Maven tests failed${NC}"
+            return 1
+        fi
+    fi
+    
+    # Java / Gradle
+    if [ -f "build.gradle" ] || [ -f "build.gradle.kts" ]; then
+        echo -e "${BLUE}🧪 Running Gradle tests...${NC}"
+        if ./gradlew test -q; then
+            echo -e "${GREEN}✓ Gradle tests passed${NC}"
+            return 0
+        else
+            echo -e "${RED}❌ Gradle tests failed${NC}"
+            return 1
+        fi
+    fi
+    
+    # Node.js
+    if [ -f "package.json" ]; then
+        echo -e "${BLUE}🧪 Running Node.js tests...${NC}"
+        if npm test; then
+            echo -e "${GREEN}✓ Node.js tests passed${NC}"
+            return 0
+        else
+            echo -e "${RED}❌ Node.js tests failed${NC}"
+            return 1
+        fi
+    fi
+    
+    # No tests found
+    echo -e "${YELLOW}⚠️  No test suite detected, skipping tests${NC}"
+    return 0
+}
+
+# Run the tests
+if ! run_tests; then
+    echo ""
+    echo -e "${RED}❌ Pre-push checks failed!${NC}"
+    echo -e "${YELLOW}Fix the failing tests or use 'git push --no-verify' to skip checks.${NC}"
+    exit 1
+fi
+
+echo ""
+echo -e "${GREEN}✅ All pre-push checks passed!${NC}"
+exit 0
