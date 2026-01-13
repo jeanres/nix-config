@@ -14,8 +14,19 @@ REPO_URL="git@github.com:jeanres/nix-config.git"
 CONFIG_DIR="$HOME/.nix-config"
 AGE_KEY_DIR="$HOME/.config/sops/age"
 AGE_KEY_FILE="$AGE_KEY_DIR/keys.txt"
-KEYCHAIN_ACCOUNT="jeanres"
-KEYCHAIN_SERVICE="Nix Config Age Key"
+
+# Load keychain settings from variables.nix after repo is cloned
+load_variables() {
+	if [ -f "$CONFIG_DIR/shared/variables.nix" ]; then
+		# Extract keychain account from variables.nix
+		KEYCHAIN_ACCOUNT=$(grep -A 2 'keychain = {' "$CONFIG_DIR/shared/variables.nix" | grep 'account' | cut -d'"' -f2)
+		KEYCHAIN_SERVICE=$(grep -A 2 'keychain = {' "$CONFIG_DIR/shared/variables.nix" | grep 'service' | cut -d'"' -f2)
+	else
+		# Fallback values
+		KEYCHAIN_ACCOUNT="jeanres"
+		KEYCHAIN_SERVICE="Nix Config Age Key"
+	fi
+}
 
 # Functions
 print_header() {
@@ -123,6 +134,11 @@ clone_repo() {
 
 setup_age_key() {
 	print_header "Setting Up Age Encryption Key"
+
+	# Load keychain variables from config
+	load_variables
+
+	print_step "Using keychain: $KEYCHAIN_ACCOUNT / $KEYCHAIN_SERVICE"
 
 	# Check if age key already exists
 	if [ -f "$AGE_KEY_FILE" ]; then
