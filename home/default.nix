@@ -1,5 +1,8 @@
 { inputs, pkgs, ... }:
 
+let
+  vars = import ../shared/variables.nix;
+in
 {
   imports = [
     ./core.nix
@@ -7,10 +10,11 @@
     ./git.nix
     ./tmux.nix
     ./neovim.nix
+    ./sops.nix
   ];
 
   home = {
-    homeDirectory = "/Users/jeanres";
+    homeDirectory = vars.homeDirectory;
     stateVersion = "24.05";
   };
 

@@ -11,6 +11,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -19,22 +23,27 @@
       nixpkgs,
       darwin,
       home-manager,
+      sops-nix,
     }:
+    let
+      vars = import ./shared/variables.nix;
+    in
     {
       darwinConfigurations = {
         "Jeanres-Mac-Pro" = darwin.lib.darwinSystem {
-          system = "x86_64-darwin"; # use "x86_64-darwin" on pre-M1 Mac
+          system = "x86_64-darwin";
           modules = [
             ./systems/darwin.nix
             {
-              users.users."jeanres".home = "/Users/jeanres";
+              users.users.${vars.username}.home = vars.homeDirectory;
             }
             home-manager.darwinModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users."jeanres" = import ./home;
+              home-manager.users.${vars.username} = import ./home;
+              home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
             }
           ];
         };
@@ -44,14 +53,15 @@
             ./systems/darwin.nix
             ./modules/homebrew.nix
             {
-              users.users."jeanres".home = "/Users/jeanres";
+              users.users.${vars.username}.home = vars.homeDirectory;
             }
             home-manager.darwinModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users."jeanres" = import ./home;
+              home-manager.users.${vars.username} = import ./home;
+              home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
             }
           ];
         };

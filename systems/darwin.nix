@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  vars = import ../shared/variables.nix;
+in
 {
   nix = {
     package = pkgs.nixVersions.latest;
@@ -48,10 +51,10 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  system.primaryUser = "jeanres";
+  system.primaryUser = vars.username;
 
   security.sudo.extraConfig = ''
-    jeanres ALL=(ALL:ALL) NOPASSWD: ALL
+    ${vars.username} ALL=(ALL:ALL) NOPASSWD: ALL
   '';
 
   services.openssh.enable = true;

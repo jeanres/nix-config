@@ -1,2 +1,8 @@
 result
 .direnv
+
+# Sops encrypted secrets (can be committed)
+# secrets/*.yaml
+
+# Age keys (NEVER commit)
+secrets/keys.txt
