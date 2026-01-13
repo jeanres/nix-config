@@ -292,8 +292,8 @@ final_instructions() {
 
 	print_step "Documentation:"
 	echo "  • README: $CONFIG_DIR/README.md"
-	echo "  • Secret management: $CONFIG_DIR/SOPS_GUIDE.md"
-	echo "  • Age key reference: $CONFIG_DIR/AGE_KEY_REFERENCE.md"
+	echo "  • Secret management: $CONFIG_DIR/documentation/SOPS_GUIDE.md"
+	echo "  • Age key reference: $CONFIG_DIR/documentation/AGE_KEY_REFERENCE.md"
 	echo
 
 	if [ -f "$AGE_KEY_FILE" ]; then

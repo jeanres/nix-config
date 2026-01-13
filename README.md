@@ -257,7 +257,7 @@ nix-shell -p sops --run "sops secrets/secrets.yaml"
 2. Update `home/sops.nix` to define deployment location
 3. Rebuild: `darwin-rebuild switch --flake ~/.nix-config`
 
-See [SOPS_GUIDE.md](SOPS_GUIDE.md) for detailed secret management instructions.
+See [SOPS_GUIDE.md](documentation/SOPS_GUIDE.md) for detailed secret management instructions.
 
 ### Common Commands
 
@@ -288,8 +288,9 @@ nix flake check ~/.nix-config
 ├── flake.lock             # Locked dependency versions
 ├── .sops.yaml             # Sops encryption rules
 ├── README.md              # This file
-├── SOPS_GUIDE.md         # Secret management guide
-├── AGE_KEY_REFERENCE.md  # Quick reference for age key
+├── documentation/
+│   ├── SOPS_GUIDE.md         # Secret management guide
+│   └── AGE_KEY_REFERENCE.md  # Quick reference for age key
 │
 ├── shared/
 │   └── variables.nix      # Shared variables (username, paths)
@@ -346,7 +347,7 @@ security find-generic-password -a "jeanres" -s "Nix Config Age Key" -w
 **Currently Encrypted:**
 - SSH private key (id_rsa) → deployed to `~/.ssh/id_rsa`
 
-For complete documentation, see [SOPS_GUIDE.md](SOPS_GUIDE.md) and [AGE_KEY_REFERENCE.md](AGE_KEY_REFERENCE.md).
+For complete documentation, see [SOPS_GUIDE.md](documentation/SOPS_GUIDE.md) and [AGE_KEY_REFERENCE.md](documentation/AGE_KEY_REFERENCE.md).
 
 ---
 
