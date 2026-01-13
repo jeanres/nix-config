@@ -44,26 +44,55 @@ This configuration provides a reproducible development environment with encrypte
 
 ## 🚀 Fresh Installation
 
-### 1. Install Homebrew
+### Option 1: Automated Install (Recommended)
+
+Run the automated installer script:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/jeanres/nix-config/main/install.sh | bash
+```
+
+Or if you've already cloned the repo:
+
+```bash
+cd ~/.nix-config
+./install.sh
+```
+
+The script will:
+- ✅ Install Homebrew (if needed)
+- ✅ Install Nix with flakes enabled
+- ✅ Clone the configuration repository
+- ✅ Setup or restore age encryption key from iCloud Keychain
+- ✅ Build and apply the configuration
+- ✅ Backup age key to iCloud Keychain
+
+---
+
+### Option 2: Manual Installation
+
+If you prefer manual installation:
+
+#### 1. Install Homebrew
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### 2. Install Nix
+#### 2. Install Nix
 
 ```bash
 sh <(curl -L https://nixos.org/nix/install)
 ```
 
-### 3. Clone This Repository
+#### 3. Clone This Repository
 
 ```bash
 git clone git@github.com:jeanres/nix-config.git ~/.nix-config
 cd ~/.nix-config
 ```
 
-### 4. Update Variables (if needed)
+#### 4. Update Variables (if needed)
 
 Edit `shared/variables.nix` to match your setup:
 
@@ -74,7 +103,7 @@ Edit `shared/variables.nix` to match your setup:
 }
 ```
 
-### 5. Generate Age Key for Secrets
+#### 5. Generate Age Key for Secrets
 
 ```bash
 mkdir -p ~/.config/sops/age
@@ -95,20 +124,20 @@ security add-generic-password \
   -j "Age encryption key for sops-nix. Created: $(date +%Y-%m-%d)"
 ```
 
-### 6. Build the Configuration
+#### 6. Build the Configuration
 
 ```bash
 cd ~/.nix-config
 nix build --extra-experimental-features "nix-command flakes" .#darwinConfigurations.Jeanres-MacBook-Pro.system
 ```
 
-### 7. Apply Configuration
+#### 7. Apply Configuration
 
 ```bash
 ./result/sw/bin/darwin-rebuild switch --flake .
 ```
 
-### 8. Subsequent Updates
+#### 8. Subsequent Updates
 
 After the first build, use:
 
