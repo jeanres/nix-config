@@ -196,5 +196,9 @@ automatically-unhide-macos-hidden-apps = true
     run = ['move-node-to-workspace 8'] 
 
 [[on-window-detected]]
+    if.app-id = 'net.whatsapp.WhatsApp'
+    run = ['move-node-to-workspace 8']
+
+[[on-window-detected]]
     if.app-id = 'com.apple.Music'
     run = ['move-node-to-workspace 5']
