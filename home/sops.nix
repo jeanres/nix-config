@@ -33,6 +33,18 @@ in
         path = "${vars.homeDirectory}/.ssh/id_rsa";
         mode = "0600";
       };
+
+      # SSH config (contains AWS CodeCommit key)
+      "ssh_config" = {
+        path = "${vars.homeDirectory}/.ssh/config";
+        mode = "0600";
+      };
+
+      # SSH public key
+      "ssh_id_rsa_pub" = {
+        path = "${vars.homeDirectory}/.ssh/id_rsa.pub";
+        mode = "0644";
+      };
     };
   };
 
