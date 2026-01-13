@@ -27,9 +27,7 @@ vim.opt.softtabstop = 2
 
 vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n", "<leader>gg", "<CMD>LazyGit<CR>")
-vim.keymap.set("n", "<leader>gb", "<CMD>BlameToggle<CR>")
 
 vim.keymap.set("n", "<space>e", "<CMD>lua vim.diagnostic.open_float(0, {scope='line'})<CR>")
 

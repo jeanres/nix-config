@@ -6,8 +6,9 @@
 
     extraConfig = ''
       set -g escape-time 0
-      set -g default-terminal "xterm-256color"
+      set -g default-terminal "tmux-256color"
       set-option -ga terminal-overrides ",xterm-256color:Tc"
+      set-option -g focus-events on
       set -g status-position top
 
       bind-key g display-popup -E -w 80% -h 80% -S "fg=#{@thm_overlay_0}" lazygit
@@ -40,9 +41,9 @@
       bind  c  new-window      -c "#{pane_current_path}"
       bind  %  split-window -h -c "#{pane_current_path}"
       bind '"' split-window -v -c "#{pane_current_path}"
-      '';
+    '';
     plugins = with pkgs; [
-     tmuxPlugins.vim-tmux-navigator
+      tmuxPlugins.vim-tmux-navigator
       {
         plugin = tmuxPlugins.resurrect;
         extraConfig = ''

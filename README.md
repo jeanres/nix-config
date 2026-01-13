@@ -54,10 +54,6 @@ darwin-rebuild switch --flake .
 
 New applications can be added to ```modules/homebrew.nix```
 
-## Services
-
-- SKHD (This allows to focus applications by using key combos)
-
 ## Neovim Configuration
 
 ### Neovim Plugins
@@ -91,11 +87,3 @@ return {
 	end,
 }
 ```
-
-#### Settings
-
-Settings for neovim can be changed in ```home/neovim/lua/config/set.lua```
-
-## Todo
-
-- Manange ssh keys with secrets

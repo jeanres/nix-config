@@ -13,40 +13,48 @@
     };
   };
 
-  outputs = { self, nixpkgs, darwin, home-manager}:
+  outputs =
     {
-    darwinConfigurations = {
-      "Jeanres-Mac-Pro" = darwin.lib.darwinSystem {
-	system = "x86_64-darwin"; # use "x86_64-darwin" on pre-M1 Mac
-	  modules = [
-	    ./systems/darwin.nix
-	    {
-	      users.users."jeanre".home = "/Users/jeanre";
-	    }
-	    home-manager.darwinModules.home-manager
-	    {
-	      home-manager.useGlobalPkgs = true;
-	      home-manager.useUserPackages = true;
-	      home-manager.users."jeanre" = import ./home;
-	    }
-	  ];
-      };
-      "Jeanres-MacBook-Pro" = darwin.lib.darwinSystem {
-	system = "aarch64-darwin"; # use "x86_64-darwin" on pre-M1 Mac
-	  modules = [
-	    ./systems/darwin.nix
-	    ./modules/homebrew.nix
-	    {	
-	      users.users."jeanre".home = "/Users/jeanre";
-	    }
-	    home-manager.darwinModules.home-manager
-	    {
-	      home-manager.useGlobalPkgs = true;
-	      home-manager.useUserPackages = true;
-	      home-manager.users."jeanre" = import ./home;
-	    }
-	  ];
+      self,
+      nixpkgs,
+      darwin,
+      home-manager,
+    }:
+    {
+      darwinConfigurations = {
+        "Jeanres-Mac-Pro" = darwin.lib.darwinSystem {
+          system = "x86_64-darwin"; # use "x86_64-darwin" on pre-M1 Mac
+          modules = [
+            ./systems/darwin.nix
+            {
+              users.users."jeanres".home = "/Users/jeanres";
+            }
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users."jeanres" = import ./home;
+            }
+          ];
+        };
+        "Jeanres-MacBook-Pro" = darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [
+            ./systems/darwin.nix
+            ./modules/homebrew.nix
+            {
+              users.users."jeanres".home = "/Users/jeanres";
+            }
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users."jeanres" = import ./home;
+            }
+          ];
+        };
       };
     };
-  };
 }

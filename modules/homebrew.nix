@@ -16,7 +16,6 @@
     ];
 
     brews = [
-      "borders"
       "reattach-to-user-namespace"
       "opencode"
     ];
@@ -25,10 +24,10 @@
       "kitty"
       "docker-desktop"
       "aerospace"
-      "vimari"
       "font-jetbrains-mono-nerd-font"
       "slack"
-      "microsoft-teams"
+      "obs"
+      "whatsapp"
     ];
   };
 }
