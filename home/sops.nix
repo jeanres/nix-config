@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   vars = import ../shared/variables.nix;
@@ -27,6 +32,16 @@ in
       "ssh_id_rsa" = {
         path = "${vars.homeDirectory}/.ssh/id_rsa";
         mode = "0600";
+      };
+    };
+  };
+
+  # Fix PATH for sops-nix launchd service on macOS
+  launchd.agents.sops-nix = lib.mkIf pkgs.stdenv.isDarwin {
+    enable = true;
+    config = {
+      EnvironmentVariables = {
+        PATH = lib.mkForce "/usr/bin:/bin:/usr/sbin:/sbin";
       };
     };
   };
