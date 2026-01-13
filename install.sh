@@ -238,8 +238,9 @@ apply_configuration() {
 
 	print_step "Running darwin-rebuild switch..."
 	print_warning "This may take a few minutes..."
+	print_warning "You may be prompted for your password (sudo required)"
 
-	if ! ./result/sw/bin/darwin-rebuild switch --flake .; then
+	if ! sudo ./result/sw/bin/darwin-rebuild switch --flake .; then
 		print_error "Failed to apply configuration"
 		print_warning "Check the error messages above for details"
 		exit 1

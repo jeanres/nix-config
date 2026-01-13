@@ -157,7 +157,30 @@ darwin-rebuild switch --flake ~/.nix-config --fast
 
 If you're setting up a new Mac with this configuration:
 
-### 1. Install Prerequisites
+### Option 1: Use Install Script (Easiest)
+
+The install script will automatically restore your age key from iCloud Keychain:
+
+```bash
+# Clone the repository
+git clone git@github.com:jeanres/nix-config.git ~/.nix-config
+cd ~/.nix-config
+
+# Run the installer
+./install.sh
+```
+
+The script automatically:
+- ✅ Installs Homebrew and Nix
+- ✅ Restores age key from iCloud Keychain
+- ✅ Builds and applies configuration
+- ✅ Decrypts all secrets (SSH keys, etc.)
+
+---
+
+### Option 2: Manual Restore
+
+#### 1. Install Prerequisites
 
 ```bash
 # Install Homebrew
@@ -167,14 +190,14 @@ If you're setting up a new Mac with this configuration:
 sh <(curl -L https://nixos.org/nix/install)
 ```
 
-### 2. Clone Repository
+#### 2. Clone Repository
 
 ```bash
 git clone git@github.com:jeanres/nix-config.git ~/.nix-config
 cd ~/.nix-config
 ```
 
-### 3. Restore Age Key from iCloud Keychain
+#### 3. Restore Age Key from iCloud Keychain
 
 ```bash
 # Create age directory
@@ -187,7 +210,7 @@ security find-generic-password -a "jeanres" -s "Nix Config Age Key" -w > ~/.conf
 chmod 600 ~/.config/sops/age/keys.txt
 ```
 
-### 4. Build and Apply
+#### 4. Build and Apply
 
 ```bash
 # First build
