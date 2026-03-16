@@ -1,0 +1,6 @@
+{ ... }:
+{
+  programs.aerospace = {
+    enable = true;
+  };
+}

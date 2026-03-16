@@ -1,0 +1,14 @@
+{
+  "NixOS program module": {
+    "prefix": "prog",
+    "body": [
+      "{ ... }:",
+      "{",
+      "  programs.${1:opencode} = {",
+      "    enable = true;",
+      "  };",
+      "}"
+    ],
+    "description": "NixOS program enable block"
+  }
+}
